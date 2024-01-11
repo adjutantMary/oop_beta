@@ -44,4 +44,10 @@ class Product:
         else:
             self.price = new_price
 
+    def __str__(self):
+        return (f'Название продукта: {self.name}, '
+                f'{self.price}.руб, '
+                f'Остаток: {self.count} шт.')
 
+    def __add__(self, other):
+        return self.price * self.count + other.price * other.quantity

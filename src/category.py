@@ -11,7 +11,7 @@ class Category:
             self,
             name: str,
             description: str,
-            products: list
+            products: list,
     ):
         self.name = name
         self.description = description
@@ -37,6 +37,12 @@ class Category:
                            f'Остаток: {product["quantity"]} шт.')
         return display
 
+    def __str__(self):
+        return (f'Название категории: {self.name}, '
+                f'Количество продуктов: {len(self.__products)} шт')
+
+
+
 
 first_category = Category(
     'Напитки',
@@ -48,3 +54,4 @@ second_category = Category(
     'Здесь находится описание категории',
     ['яблоки', 'mandarin', 'apple', 'apple']
 )
+print(first_category)
