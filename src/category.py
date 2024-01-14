@@ -1,17 +1,16 @@
-
 class Category:
-    '''
+    """
     Класс, определяющий свойства категорий
-    '''
+    """
 
     category_count = 0
     unique_products = 0
 
     def __init__(
-            self,
-            name: str,
-            description: str,
-            products: list,
+        self,
+        name: str,
+        description: str,
+        products: list,
     ):
         self.name = name
         self.description = description
@@ -26,32 +25,22 @@ class Category:
 
     @property
     def get_products(self):
-        '''
+        """
         Геттер, выводит список товаров
-        '''
+        """
         products = self.__products
         display = []
         for product in products:
-            display.append(f'Продукт {product["name"]}, '
-                           f'{product["price"]} руб. '
-                           f'Остаток: {product["quantity"]} шт.')
+            display.append(
+                f'Продукт {product["name"]}, ' f'{product["price"]} руб. ' f'Остаток: {product["quantity"]} шт.'
+            )
         return display
 
     def __str__(self):
-        return (f'Название категории: {self.name}, '
-                f'Количество продуктов: {len(self.__products)} шт')
+        return f"Название категории: {self.name}, " f"Количество продуктов: {len(self.__products)} шт"
 
 
-
-
-first_category = Category(
-    'Напитки',
-    'Здесь находится описание категории',
-    ['молоко', 'вода', 'вино', 'сок', 'молоко'])
-
-second_category = Category(
-    'Фрукты',
-    'Здесь находится описание категории',
-    ['яблоки', 'mandarin', 'apple', 'apple']
-)
-print(first_category)
+# first_category = Category("Напитки", "Здесь находится описание категории", ["молоко", "вода", "вино", "сок", "молоко"])
+#
+# second_category = Category("Фрукты", "Здесь находится описание категории", ["яблоки", "mandarin", "apple", "apple"])
+# print(first_category)
