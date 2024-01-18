@@ -44,3 +44,4 @@ class Product:
         if isinstance(other, Product):
             return self.price * self.quantity + other.price * other.quantity
         raise TypeError('Сложение двух разных типов продуктов невозможно')
+
