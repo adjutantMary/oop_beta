@@ -43,5 +43,7 @@ class Product:
     def __add__(self, other):
         if isinstance(other, Product):
             return self.price * self.quantity + other.price * other.quantity
-        raise TypeError('Сложение двух разных типов продуктов невозможно')
+        raise TypeError("Сложение двух разных типов продуктов невозможно")
 
+    def __repr__(self):
+        return f'{self.__class__.__name__}("{self.name}", ' f'"{self.price}", "{self.quantity}", "{self.description}")'

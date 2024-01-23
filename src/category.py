@@ -1,5 +1,6 @@
 from product import Product
 
+
 class Category:
     """
     Класс, определяющий свойства категорий
@@ -42,16 +43,17 @@ class Category:
         return f"Название категории: {self.name}, " f"Количество продуктов: {len(self.__products)} шт"
 
     def __add__(self, other):
-        '''
+        """
         Метод для добавления продукта из класса Product в категорию по имени продукта
         :param other: имя продукта
         :return: список
-        '''
+        """
         if not isinstance(other, Product):
-            return ValueError('Объект не принадлежит классу Product')
+            return ValueError("Объект не принадлежит классу Product")
         return self.__products.append(other.name)
 
-
+    def __repr__(self):
+        return f'{self.__class__.__name__}("{self.name}",' f'"{self.description}", "{self.__products}"'
 
 
 # first_category = Category("Напитки", "Здесь находится описание категории", ["молоко", "вода", "вино", "сок", "молоко"])
