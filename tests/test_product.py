@@ -16,7 +16,7 @@ def test_product_init(products_):
     assert products_.name == 'Название'
     assert products_.description == 'Описание продукта'
     assert products_.price == 100.00
-    assert products_.count == 12
+    assert products_.quantity == 12
 
 
 
