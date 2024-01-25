@@ -1,4 +1,7 @@
-class Product:
+from base_class import Shop
+
+
+class Product(Shop):
     """
     Класс для определения свойств продукта
     """
