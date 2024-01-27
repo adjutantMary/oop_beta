@@ -1,4 +1,4 @@
-from src.base_class import Shop
+from .base_class import Shop
 
 
 class Product(Shop):
