@@ -1,4 +1,4 @@
-from product import Product
+from src.product import Product
 
 
 class Category:
@@ -31,9 +31,9 @@ class Category:
         """
         Геттер, выводит список товаров
         """
-        products = self.__products
+        product_list = self.__products
         display = []
-        for product in products:
+        for product in product_list:
             display.append(
                 f'Продукт {product["name"]}, ' f'{product["price"]} руб. ' f'Остаток: {product["quantity"]} шт.'
             )
