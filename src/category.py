@@ -42,21 +42,32 @@ class Category:
     def __str__(self):
         return f"Название категории: {self.name}, " f"Количество продуктов: {len(self.__products)} шт"
 
-    def __add__(self, other):
+    def adding_new_product(self, new_product):
         """
         Метод для добавления продукта из класса Product в категорию по имени продукта
-        :param other: имя продукта
+        :param new_product: новый продукт, который добавляется в категорию
         :return: список
         """
-        if not isinstance(other, Product):
+        if not isinstance(new_product, Product):
             return ValueError("Объект не принадлежит классу Product")
-        return self.__products.append(other.name)
+        elif new_product['quantity'] == 0:
+            raise ValueError("товар с нулевым количеством не может быть добавлен")
+        return self.__products.append(new_product.name)
 
     def __repr__(self):
         return f'{self.__class__.__name__}("{self.name}",' f'"{self.description}", "{self.__products}"'
 
+    def average_price_tag(self):
+        '''
+        Метод для получения среднего ценника за все продукты в категории
+        :return:
+        '''
+        try:
 
-# first_category = Category("Напитки", "Здесь находится описание категории", ["молоко", "вода", "вино", "сок", "молоко"])
-#
-# second_category = Category("Фрукты", "Здесь находится описание категории", ["яблоки", "mandarin", "apple", "apple"])
-# print(first_category)
+            for
+
+if __name__ == "__main__":
+    first_category = Category("Напитки", "Здесь находится описание категории", ["молоко", "вода", "вино", "сок", "молоко"])
+
+    second_category = Category("Фрукты", "Здесь находится описание категории", ["яблоки", "mandarin", "apple", "apple"])
+    print(first_category)
