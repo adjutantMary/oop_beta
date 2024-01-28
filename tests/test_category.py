@@ -20,4 +20,3 @@ def test_init_category(category_products):
 def test_counting(category_products):
     assert len(category_products.products) == 4
 
-
