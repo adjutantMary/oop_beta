@@ -35,7 +35,7 @@ class Category:
         display = []
         for product in product_list:
             display.append(
-                f'Продукт {product["name"]}, ' f'{product["price"]} руб. ' f'Остаток: {product["quantity"]} шт.'
+                f'Продукт {product["name"]}, {product["price"]} руб. Остаток: {product["quantity"]} шт.'
             )
         return display
 
