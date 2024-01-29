@@ -5,17 +5,13 @@ from src.product import Product
 
 @pytest.fixture
 def category_products():
-    return Category(
-        'Напитки',
-        'Здесь находится описание категории',
-        ['молоко', 'вода', 'вино', 'сок']
-    )
+    return Category("Напитки", "Здесь находится описание категории", ["молоко", "вода", "вино", "сок"])
 
 
 def test_init_category(category_products):
-    assert category_products.name == 'Напитки'
-    assert category_products.description == 'Здесь находится описание категории'
-    assert category_products.products == ['молоко', 'вода', 'вино', 'сок']
+    assert category_products.name == "Напитки"
+    assert category_products.description == "Здесь находится описание категории"
+    assert category_products.products == ["молоко", "вода", "вино", "сок"]
 
 
 def test_counting(category_products):
@@ -23,6 +19,6 @@ def test_counting(category_products):
 
 
 def test_raises_quantity(category_products):
-    prod_ = Product('thing', 'text', 100.0, 0)
+    prod_ = Product("thing", "text", 100.0, 0)
     with pytest.raises(ValueError):
         category_products.append(prod_)
