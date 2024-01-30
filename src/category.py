@@ -34,9 +34,7 @@ class Category:
         product_list = self.__products
         display = []
         for product in product_list:
-            display.append(
-                f'Продукт {product["name"]}, {product["price"]} руб. Остаток: {product["quantity"]} шт.'
-            )
+            display.append(product)
         return display
 
     def __str__(self):
@@ -86,3 +84,11 @@ if __name__ == "__main__":
         "Фрукты", "Здесь находится описание категории", ["яблоки", "mandarin", "apple", "apple"]
     )
     print(first_category)
+
+
+product1 = Product("Product1", "Description1", 10.0, 20)
+product2 = Product("Product2", "Description2", 15.0, 30)
+product3 = Product("Product3", "Description3", 20.0, 0)
+
+category = Category("Category1", "Category Description", [product1, product2])
+category.adding_new_product(product1)
