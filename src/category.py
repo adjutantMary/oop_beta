@@ -48,7 +48,7 @@ class Category:
         """
         if not isinstance(new_product, Product):
             return ValueError("Объект не принадлежит классу Product")
-        elif new_product["quantity"] == 0:
+        elif new_product.quantity == 0:
             raise ValueError("товар с нулевым количеством не может быть добавлен")
         return self.__products.append(new_product.name)
 
@@ -91,4 +91,4 @@ product2 = Product("Product2", "Description2", 15.0, 30)
 product3 = Product("Product3", "Description3", 20.0, 0)
 
 category = Category("Category1", "Category Description", [product1, product2])
-category.adding_new_product(product1)
+category.adding_new_product(product3)
