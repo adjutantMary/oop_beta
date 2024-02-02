@@ -55,7 +55,7 @@ class Category:
     def __repr__(self):
         return f'{self.__class__.__name__}("{self.name}",' f'"{self.description}", "{self.__products}"'
 
-    def average_price_tag(self, all_products):
+    def average_price_tag(self):
         """
         Метод для получения среднего ценника за все продукты в категории
         :param all_products: список всех продуктов в категории
@@ -63,32 +63,13 @@ class Category:
         """
         try:
             all_price = 0
-            for product in all_products:
+            for product in self.__products:
                 if product("price"):
                     all_price += product
         except AttributeError:
             print("В данной категории не существует такого продукта")
-        except ZeroDivisionError:
-            print("Деление на ноль невозможно")
+
         else:
-            avg_price = all_price / len(all_products)
+            avg_price = all_price / len(self.__products)
             return avg_price
-
-
-if __name__ == "__main__":
-    first_category = Category(
-        "Напитки", "Здесь находится описание категории", ["молоко", "вода", "вино", "сок", "молоко"]
-    )
-
-    second_category = Category(
-        "Фрукты", "Здесь находится описание категории", ["яблоки", "mandarin", "apple", "apple"]
-    )
-    print(first_category)
-
-
-product1 = Product("Product1", "Description1", 10.0, 20)
-product2 = Product("Product2", "Description2", 15.0, 30)
-product3 = Product("Product3", "Description3", 20.0, 0)
-
-category = Category("Category1", "Category Description", [product1, product2])
-category.adding_new_product(product3)
+        raise ZeroDivisionError("Деление на ноль невозможно")
