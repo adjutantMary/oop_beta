@@ -58,13 +58,12 @@ class Category:
     def average_price_tag(self):
         """
         Метод для получения среднего ценника за все продукты в категории
-        :param all_products: список всех продуктов в категории
         :return: int
         """
         try:
             all_price = 0
             for product in self.__products:
-                if product("price"):
+                if product.price:
                     all_price += product
         except AttributeError:
             print("В данной категории не существует такого продукта")
