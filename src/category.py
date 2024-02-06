@@ -65,10 +65,10 @@ class Category:
             for product in self.__products:
                 if product.price:
                     all_price += product
-        except AttributeError:
-            print("В данной категории не существует такого продукта")
-
-        else:
             avg_price = all_price / len(self.__products)
             return avg_price
-        raise ZeroDivisionError("Деление на ноль невозможно")
+        except AttributeError:
+            print("В данной категории не существует такого продукта")
+        except ZeroDivisionError:
+            print('Деление на ноль невозможно')
+            return 0
